@@ -8,7 +8,7 @@ $cnn = new connect('Sup');
 if(isset($_POST['reqest']) && isset($_POST['type'])) {
 	switch($_POST['type']) {
 		case 'signin':
-			$user_data = cnn->getRowTable('user', 'email='.$_POST['email']);
+			$user_data = $cnn->getRowTable('user', 'email='.$_POST['email']);
 			if(!$user_data) {
 				echo '{"s":"un`correct user"}';
 			} else {
